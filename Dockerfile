@@ -6,6 +6,7 @@ VOLUME /media
 EXPOSE 80
 COPY webdav.conf /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/sites-enabled/*
+RUN usermod -u 1000 www-data
 
 COPY entrypoint.sh /
 RUN chmod +x entrypoint.sh
